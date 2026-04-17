@@ -1,8 +1,11 @@
 {
-    "name": "noon",
+    "name": "lore",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "bin": {
+        "lore": "dist/index.js"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc",
@@ -11,16 +14,16 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luizpaulo73/noon.git"
+        "url": "git+https://github.com/luizpaulo73/lore.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "type": "commonjs",
     "bugs": {
-        "url": "https://github.com/luizpaulo73/noon/issues"
+        "url": "https://github.com/luizpaulo73/lore/issues"
     },
-    "homepage": "https://github.com/luizpaulo73/noon#readme",
+    "homepage": "https://github.com/luizpaulo73/lore#readme",
     "devDependencies": {
         "@types/node": "^25.6.0",
         "ts-node": "^10.9.2",
