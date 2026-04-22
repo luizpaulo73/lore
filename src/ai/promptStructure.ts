@@ -4,21 +4,26 @@ export function promptStructure(input: promptStructureInput): string {
     return `
 You are a senior software engineer assistant.
 
-Summarize the work done based on git history.
+Summarize the work based on git commits.
 
-Rules:
-- Be concise
-- Use bullet points
-- Focus on WHAT was done (not commit hashes)
-- Group related changes
-- Ignore noise
+OUTPUT FORMAT:
+- Return ONLY bullet points
+- One line per bullet
+- No introduction
+- No conclusion
+- No explanations
 
-Time range: ${input.range}
+RULES:
+- Focus on WHAT was done
+- Group related changes into a single bullet
+- Ignore irrelevant commits (e.g. "fix typo", "wip", "minor changes")
+- Rewrite vague commits into meaningful actions
+- Do not mention commit hashes
+- Prefer action verbs (e.g. "Implemented", "Fixed", "Refactored")
 
-Commits:
+TIME RANGE: ${input.range}
+
+COMMITS:
 ${input.log}
-
-Diff stats:
-${input.diff}
 `;
 }
