@@ -17,8 +17,9 @@ program
                 range: data.range
             });
 
-            console.log("\n🧠 AI Summary:\n");
-            console.log(summary);
+            console.log("\n===== AI SUMMARY =====\n");
+            console.log(summary.trim());
+            console.log("\n======================\n");
             return;
         }
         console.log(JSON.stringify({ data }, null, 2));
