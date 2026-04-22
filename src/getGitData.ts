@@ -19,13 +19,8 @@ export function getGitData(input: getGitDataInput): getGitDataReturnType {
 
     const logArgs = ["log", "--oneline"];
 
-    if (resolvedSince) {
-        logArgs.push(`--since=${resolvedSince}`);
-    }
-
-    if (normalizedUntil) {
-        logArgs.push(`--until=${normalizedUntil}`);
-    }
+    if (resolvedSince) logArgs.push(`--since=${resolvedSince}`);
+    if (normalizedUntil) logArgs.push(`--until=${normalizedUntil}`);
 
     const log = execFileSync("git", logArgs, { encoding: "utf8" }).trim();
     const diff = execFileSync("git", ["diff", "--stat"], { encoding: "utf8" }).trim();
