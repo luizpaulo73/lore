@@ -37,6 +37,15 @@ npm run dev -- "2 weeks ago"
 npm run dev -- "last friday"
 ```
 
+You can run with an explicit date interval:
+
+```bash
+npm run dev -- --since "2026-04-01" --until "2026-04-15"
+npm run dev -- --since "10 days ago" --until "yesterday"
+```
+
+If you pass `--since` and/or `--until`, they are sent directly to `git log`.
+
 The default range is `today`.
 
 ## Optional: Build and Run Compiled Output
@@ -59,6 +68,7 @@ npm run cli -- yesterday
 - `yesterday`: last 2 days
 - `week`: last 7 days
 - Any Git date expression, such as `2 weeks ago`, `yesterday 00:00`, or `2026-04-01`
+- Interval mode with `--since` and `--until`
 
 ## Example Output
 
