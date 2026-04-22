@@ -3,7 +3,7 @@ import { getGitDataInput, getGitDataReturnType } from "./types/gitManagement";
 
 const presets: Record<string, string> = {
     today: "1 day ago",
-    yesterday: "2 days ago",
+    yesterday: "yesterday",
     week: "7 days ago"
 };
 
@@ -17,7 +17,7 @@ export function getGitData(input: getGitDataInput): getGitDataReturnType {
         ?? (normalizedRange ? (presets[normalizedRange] ?? normalizedRange) : undefined)
         ?? (normalizedUntil ? "7 days ago" : presets.today);
 
-    const logArgs = ["log", "--no-merges", "shortstat", "--pretty=format:%s"];
+    const logArgs = ["log", "--no-merges", "--shortstat", "--pretty=format:### %s"];
 
     if (resolvedSince) logArgs.push(`--since=${resolvedSince}`);
     if (normalizedUntil) logArgs.push(`--until=${normalizedUntil}`);
