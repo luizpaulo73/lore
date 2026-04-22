@@ -11,3 +11,9 @@ export type getGitDataInput = {
     since?: string;
     until?: string;
 }
+
+export type promptStructureInput = {
+    log: string;
+    diff: string;
+    range?: string;
+}
